@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="100.0" prefWidth="585.0" style="-fx-border-color: red;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.MatchController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutY="-5.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="545.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="tournamentLabel" alignment="CENTER" prefHeight="22.0" prefWidth="324.0" style="-fx-border-color: #FF0000;" text="Tournament" textFill="#7b00ff">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Cambria Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dateLabel" alignment="CENTER" prefHeight="24.0" prefWidth="325.0" style="-fx-border-color: #7b00ff;" text="Match Date" textFill="RED">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="142.0" prefWidth="325.0">
+               <children>
+                  <Label fx:id="firstTeamLabel" alignment="CENTER" prefHeight="141.0" prefWidth="220.0" text="Label">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="firstScoreLabel" alignment="CENTER" prefHeight="178.0" prefWidth="28.0" text="-" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="141.0" prefWidth="23.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Line endX="100.0" layoutX="-59.5" layoutY="70.0" startX="68.0" AnchorPane.bottomAnchor="70.5" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="69.5" />
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="secondScoreLabel" alignment="CENTER" prefHeight="178.0" prefWidth="28.0" text="-">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="secondTeamLabel" alignment="CENTER" prefHeight="141.0" prefWidth="220.0" text="Label" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.LoginController">
+   <children>
+      <Button fx:id="loginButton" layoutX="394.0" layoutY="174.0" mnemonicParsing="false" onAction="#login" text="Login to my Nazamly account" />
+      <Button fx:id="homeButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomePage" text="Retutrn to home" />
+      <Label layoutX="116.0" layoutY="95.0" text="Email: " />
+      <Label layoutX="115.0" layoutY="146.0" text="Password: " />
+      <TextField fx:id="emailField" layoutX="190.0" layoutY="91.0" prefHeight="25.0" prefWidth="250.0" />
+      <PasswordField fx:id="pwField" layoutX="190.0" layoutY="142.0" prefHeight="25.0" prefWidth="250.0" />
+      <Label layoutX="190.0" layoutY="289.0" text="Don't have a Nazamly account? " />
+      <Button fx:id="createButton" layoutX="394.0" layoutY="285.0" mnemonicParsing="false" onAction="#switchToRegisterPage" text="Create a new Nazamly account" />
+      <Button fx:id="resetButton" layoutX="394.0" layoutY="237.0" mnemonicParsing="false" onAction="#resetPw" text="Reset Password" />
+      <Label fx:id="wrongErrorLabel" layoutX="189.0" layoutY="178.0" opacity="0.0" prefHeight="17.0" prefWidth="204.0" text="Email / Password incorrect" textFill="RED" />
+      <Label fx:id="forgotPwLabel" layoutX="189.0" layoutY="203.0" prefHeight="34.0" prefWidth="409.0" text="Forgot password? Enter your email and press the Reset Password button" />
+      <Label fx:id="resetErrorLabel" layoutX="189.0" layoutY="241.0" opacity="0.0" text="You didn't enter your email" textFill="RED" />
+   </children>
+</AnchorPane>

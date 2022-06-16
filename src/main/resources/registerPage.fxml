@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.RegisterController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="224.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="376.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="97.0" minHeight="9.0" prefHeight="36.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="successLabel" alignment="TOP_CENTER" opacity="0.0" prefHeight="70.0" prefWidth="224.0" text="Account created successfully. Please login" textFill="LIME" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
+      <Label fx:id="pwErrorLabel" alignment="BOTTOM_LEFT" opacity="0.0" prefHeight="88.0" prefWidth="358.0" text="Passwords don't match" textFill="RED" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+      <Label prefHeight="64.0" prefWidth="300.0" text="Name: " GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+      <Label prefHeight="92.0" prefWidth="224.0" text="E-mail: " GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Label prefHeight="50.0" prefWidth="224.0" text="Password: " GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+      <Label prefHeight="61.0" prefWidth="234.0" text="Repeat your Password: " GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+      <Label prefHeight="41.0" prefWidth="224.0" text="Are you a Tournament organizer? " GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+      <Label fx:id="emailError" alignment="BOTTOM_LEFT" opacity="0.0" prefHeight="73.0" prefWidth="380.0" text="This email is already registered!" textFill="RED" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <PasswordField fx:id="pwField" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+      <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+      <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Button fx:id="createAccButton" mnemonicParsing="false" onAction="#createButton" prefHeight="25.0" prefWidth="236.0" text="Create Account" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
+      <GridPane GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="25.0" prefWidth="228.0" text="Log in" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#switchToMainPage" prefHeight="25.0" prefWidth="196.0" text="Return to home" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+         </children>
+      </GridPane>
+      <CheckBox fx:id="adminCheckbox" mnemonicParsing="false" text="Yes, I organize tournamnets" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin></CheckBox>
+      <PasswordField fx:id="rpwField" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+   </children>
+</GridPane>

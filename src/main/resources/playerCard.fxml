@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="204.0" prefWidth="565.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.PlayerController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="13.0" layoutY="-5.0" prefHeight="200.0" prefWidth="572.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="545.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="tournamentLabel" alignment="CENTER" prefHeight="22.0" prefWidth="324.0" style="-fx-border-color: #FF0000;" text="Tournament" textFill="#7b00ff">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Cambria Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="teamLabel" alignment="CENTER" prefHeight="24.0" prefWidth="325.0" style="-fx-border-color: #7b00ff;" text="Team Name" textFill="RED">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="142.0" prefWidth="325.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@football-player-1426973-1208513.png" />
+                     </image></ImageView>
+                  <Label fx:id="playerNameLabel" alignment="CENTER" prefHeight="150.0" prefWidth="235.0" text="Player Name" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="178.0" prefWidth="28.0" text="-">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="noGoalsLabel" alignment="CENTER" prefHeight="141.0" prefWidth="97.0" text="Number" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

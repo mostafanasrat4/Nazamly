@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+    <tabs>
+        <Tab text="Home">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <VBox layoutX="228.0" layoutY="29.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                            <children>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="80.0" prefWidth="602.0">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="20.0" />
+                                    </VBox.margin>
+                                    <children>
+                                        <ImageView fitHeight="123.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@logo2.png" />
+                                            </image>
+                                            <HBox.margin>
+                                                <Insets right="20.0" />
+                                            </HBox.margin>
+                                        </ImageView>
+                                        <VBox prefHeight="123.0" prefWidth="264.0">
+                                            <children>
+                                                <Label text="Welcome to NAZAMLY" textFill="#cd128e">
+                                                    <font>
+                                                        <Font name="System Bold Italic" size="22.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets bottom="2.0" top="8.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <Label text="where you can create, manage, follow" textFill="#cd128e">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="your favourite sports tournament" textFill="#cd128e">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                        <VBox prefHeight="123.0" prefWidth="203.0">
+                                            <children>
+                                                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="25.0" prefWidth="100.0" text="Login / Register" textFill="RED" />
+                                                <Label fx:id="loginLabel1" prefHeight="28.0" prefWidth="188.0" text="- You are not currently logged in!">
+                                                    <VBox.margin>
+                                                        <Insets top="5.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="loginLabel2" prefHeight="17.0" prefWidth="189.0" text="- Today's matches are displayed!">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="loginLabel3" prefHeight="17.0" prefWidth="191.0" text="- You can have your favourite">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="loginLabel4" prefHeight="17.0" prefWidth="189.0" text="  teams' matches displayed by ">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="loginLabel5" text="  logging in to your account!">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <HBox.margin>
+                                                <Insets left="20.0" />
+                                            </HBox.margin>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="222.0" prefWidth="602.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <ScrollPane prefHeight="200.0" prefWidth="585.0">
+                                            <content>
+                                                <GridPane fx:id="mainGrid" prefHeight="0.0" prefWidth="585.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                </GridPane>
+                                            </content>
+                                            <HBox.margin>
+                                                <Insets left="8.0" />
+                                            </HBox.margin>
+                                        </ScrollPane>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="All Matches">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <VBox layoutX="284.0" layoutY="43.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                            <children>
+                                <HBox prefHeight="32.0" prefWidth="602.0">
+                                    <children>
+                                        <ComboBox fx:id="tournamentFilter" onAction="#tournamentFilterAllMatches" prefHeight="25.0" prefWidth="169.0" promptText="Filter by Tournament" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="20.0" />
+                                            </HBox.margin>
+                                        </ComboBox>
+                                        <ComboBox fx:id="teamFilter" onAction="#teamFilterAllMatches" prefHeight="25.0" prefWidth="134.0" promptText="Filter by Team" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets right="20.0" />
+                                            </HBox.margin>
+                                        </ComboBox>
+                                        <DatePicker fx:id="datePickerAllMatches" editable="false" onAction="#dateFilterAllMatches" promptText="Select a date" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets right="15.0" />
+                                            </HBox.margin>
+                                        </DatePicker>
+                              <Button mnemonicParsing="false" onAction="#clearFilters" prefHeight="25.0" prefWidth="118.0" text="Clear Filters">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" top="30.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="31.0" prefWidth="602.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <ScrollPane prefHeight="281.0" prefWidth="585.0">
+                                            <HBox.margin>
+                                                <Insets top="10.0" />
+                                            </HBox.margin>
+                                            <content>
+                                                <GridPane fx:id="grid" prefWidth="585.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                </GridPane>
+                                            </content>
+                                        </ScrollPane>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="League Standings">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <VBox layoutX="200.0" layoutY="44.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                            <children>
+                                <HBox prefHeight="32.0" prefWidth="602.0">
+                                    <children>
+                                        <ComboBox fx:id="tournamentFilterStandings" onAction="#tournamentFilterStandingAction" prefHeight="25.0" prefWidth="169.0" promptText="Choose a Tournament" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets left="40.0" right="20.0" />
+                                            </HBox.margin>
+                                        </ComboBox>
+                                        <Label fx:id="tableNameLabel" prefHeight="27.0" prefWidth="372.0" text="Tournaments League Standings" />
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" top="30.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="295.0" prefWidth="602.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <ScrollPane fx:id="leagueTable" prefHeight="293.0" prefWidth="585.0">
+                                            <HBox.margin>
+                                                <Insets left="8.0" />
+                                            </HBox.margin>
+                                            <content>
+                                                <TableView fx:id="standingsTable" prefHeight="279.0" prefWidth="583.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="posColumn" prefWidth="78.0" text="Pos." />
+                                                        <TableColumn fx:id="nameColumn" prefWidth="158.0" text="Team Name" />
+                                                        <TableColumn fx:id="playedColumn" prefWidth="70.0" text="Played" />
+                                                        <TableColumn fx:id="gfColumn" prefWidth="70.0" text="GF" />
+                                                        <TableColumn fx:id="gaColumn" prefWidth="70.0" text="GA" />
+                                                        <TableColumn fx:id="gdColumn" prefWidth="70.0" text="GD" />
+                                                        <TableColumn fx:id="pointsColumn" prefWidth="70.0" text="Points" />
+                                                    </columns>
+                                                </TableView>
+                                            </content>
+                                        </ScrollPane>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Statistics">
+            <content>
+                <AnchorPane>
+               <children>
+                  <VBox layoutX="200.0" layoutY="86.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="30.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="39.0" prefWidth="379.0" text="Top scoring players in each tournament available!" textFill="#cd128e">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="filterPlayersCombobox" onAction="#filterPlayers" prefHeight="25.0" prefWidth="196.0" promptText="Filter by tournament">
+                                 <HBox.margin>
+                                    <Insets right="5.0" top="8.0" />
+                                 </HBox.margin></ComboBox>
+                              <Button fx:id="resetPlayersButton" mnemonicParsing="false" onAction="#defaultStatGrid" prefHeight="25.0" prefWidth="90.0" text="Reset">
+                                 <HBox.margin>
+                                    <Insets right="5.0" top="8.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="345.0" prefWidth="602.0">
+                           <children>
+                              <ScrollPane prefHeight="284.0" prefWidth="607.0">
+                                <content>
+                                    <GridPane fx:id="statGrid" prefWidth="585.0">
+                                        <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        </columnConstraints>
+                                    </GridPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Manage Tournaments">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="manageTournamentButton" alignment="CENTER" disable="true" layoutX="195.0" layoutY="125.0" mnemonicParsing="false" onAction="#switchToManagePage" text="Manage already existing tournament" />
+                        <Button fx:id="createTournamentButton" alignment="CENTER" disable="true" layoutX="228.0" layoutY="173.0" mnemonicParsing="false" onAction="#switchToCreatePage" text="Create new Tournament" />
+                        <Label fx:id="adminManageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="43.0" prefHeight="38.0" prefWidth="600.0" text="Sorry, you must be an admin account to create / manage tournaments" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
+                            <font>
+                                <Font name="System Bold Italic" size="18.0" />
+                            </font>
+                            <padding>
+                                <Insets top="20.0" />
+                            </padding>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="buyTab" text="Buy Tickets">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="250.0" layoutY="-14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                     <children>
+                        <HBox prefHeight="372.0" prefWidth="602.0">
+                           <children>
+                              <ScrollPane prefHeight="200.0" prefWidth="602.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="600.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="602.0" text="You can buy Tickets to attend matches of your favourite team. You can pay by cash or credit/debit cards." AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" top="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold Italic" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <GridPane layoutX="157.0" layoutY="156.0" prefHeight="321.0" prefWidth="602.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Choose Tournament: ">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Choose match: " GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Price per ticket: " GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Number of tickets: " GridPane.rowIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Total price: " GridPane.rowIndex="4">
+                                                   <padding>
+                                                      <Insets left="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label text="Payment method: " GridPane.rowIndex="5">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin></Label>
+                                                <ComboBox fx:id="buyTournamentCombo" onAction="#selectBuyTournamentCombo" prefHeight="25.0" prefWidth="345.0" promptText="Select a tournament" GridPane.columnIndex="1" />
+                                                <ComboBox fx:id="buyMatchComboBox" disable="true" onAction="#selectBuyMatchCombo" prefHeight="25.0" prefWidth="333.0" promptText="Select a match" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label fx:id="ticketPriceLabel" text="0.00 L.E." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <ComboBox fx:id="noTicketsCombo" onAction="#selectNoOfTickets" prefHeight="25.0" prefWidth="304.0" promptText="Select number of tickets" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label fx:id="totalPriceLabel" text="0.00 L.E." GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <ComboBox fx:id="payMethodCombo" disable="true" onAction="#choosePaymentMethod" prefHeight="25.0" prefWidth="178.0" promptText="Select a payment method" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Label text="Credit card information: " GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="12.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Name on card: " GridPane.rowIndex="7">
+                                                   <padding>
+                                                      <Insets left="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="cardNameField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="cardNoField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                <TextField fx:id="ccvField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                   <children>
+                                                      <ComboBox fx:id="monthExpCombo" disable="true" prefWidth="150.0" promptText="Month">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </ComboBox>
+                                                      <ComboBox fx:id="yearExpCombo" disable="true" prefWidth="150.0" promptText="Year">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </ComboBox>
+                                                   </children>
+                                                </HBox>
+                                                <Label text="Card number: " GridPane.rowIndex="8">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Expiry date: " GridPane.rowIndex="9">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="CCV" GridPane.rowIndex="10">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Button fx:id="payButton" disable="true" mnemonicParsing="false" onAction="#pay" prefHeight="25.0" prefWidth="178.0" text="Confirm order and pay" GridPane.rowIndex="11">
+                                                   <GridPane.margin>
+                                                      <Insets left="100.0" />
+                                                   </GridPane.margin>
+                                                </Button>
+                                                <Label fx:id="paySuccessLabel" opacity="0.0" text="Payment Success. Check your e-mail!" textFill="LIME" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ScrollPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="profileTab" disable="true" text="My Profile">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="26.0" layoutY="28.0" text="Your Account Details: " />
+                  <Label layoutX="26.0" layoutY="56.0" text="Name: " />
+                  <Label layoutX="26.0" layoutY="84.0" text="Email: " />
+                  <Label layoutX="26.0" layoutY="113.0" text="Tournament organier? " />
+                  <Label layoutX="26.0" layoutY="141.0" text="Your favourite teams:" />
+                  <Label layoutX="26.0" layoutY="216.0" text="Your Tournaments: " />
+                  <Label fx:id="profileNameLabel" layoutX="193.0" layoutY="56.0" prefHeight="17.0" prefWidth="407.0" text="Name" />
+                  <Label fx:id="profileEmailLabel" layoutX="193.0" layoutY="84.0" prefHeight="17.0" prefWidth="408.0" text="Email" />
+                  <Label fx:id="profileIsAdminLabel" layoutX="193.0" layoutY="113.0" prefHeight="17.0" prefWidth="29.0" text="No" />
+                  <ComboBox fx:id="profileFavTeamsCombo" layoutX="193.0" layoutY="137.0" prefHeight="25.0" prefWidth="250.0" />
+                  <Label layoutX="26.0" layoutY="177.0" text="Add favourite team" />
+                  <ComboBox fx:id="profileAddFavCombo" layoutX="193.0" layoutY="173.0" prefHeight="25.0" prefWidth="250.0" />
+                  <ComboBox fx:id="profileTournamentsCombo" layoutX="193.0" layoutY="212.0" prefHeight="25.0" prefWidth="250.0" />
+                  <Button fx:id="profileAddFavButton" layoutX="471.0" layoutY="173.0" mnemonicParsing="false" onAction="#addFav" text="Add team" />
+               </children></AnchorPane>
+            </content>
+        </Tab>
+
+    </tabs>
+</TabPane>
